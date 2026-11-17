@@ -1,0 +1,7 @@
+# Configuração local do banco: não enviar credenciais ao repositório.
+/backend/config/config.local.php
+
+# Arquivos temporários comuns.
+*.log
+.DS_Store
+Thumbs.db

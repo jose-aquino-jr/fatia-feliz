@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Terminal de autoatendimento Fatia Feliz.">
+  <title>FATIA FELIZ — TERMINAL 04</title>
+  <link rel="stylesheet" href="horror.css">
+</head>
+<body>
+<main id="totem">
+  <div class="crt-glass" aria-hidden="true"></div>
+  <div class="system-strip"><span>FATIA FELIZ</span><span>TERMINAL DE AUTOATENDIMENTO // UNIDADE 04</span><span class="sys-clock" id="sys-clock">00:00:00</span></div>
+
+  <section id="home" class="screen active">
+    <div class="home-panel">
+      <div class="home-topline"><span class="status-light"></span> SISTEMA OPERACIONAL <span>RETIRE NO BALCÃO</span></div>
+      <div class="logo logo-home" data-logo></div>
+      <div class="home-copy">
+        <p class="eyebrow">PIZZARIA · DESDE 1987 · TURNO NOTURNO</p>
+        <h1>SEU PEDIDO<br><em>COMEÇA AQUI.</em></h1>
+        <p>Escolha seu pedido. O atendimento continua normalmente.</p>
+      </div>
+      <div class="home-photo">
+        <img src="assets/pizza-calabresa.jpg" alt="Pizza de calabresa">
+        <span class="photo-stamp">IMAGEM DA UNIDADE 04</span>
+      </div>
+      <button class="btn btn-primary start-btn" data-a="start">COMEÇAR PEDIDO <span aria-hidden="true">›</span></button>
+      <p class="home-note"><span class="touch-icon" aria-hidden="true">▸</span> TOQUE NA TELA PARA CONTINUAR <span class="build-no">BUILD 04.17.03</span></p>
+    </div>
+  </section>
+
+  <section id="menu" class="screen">
+    <header class="top">
+      <div class="top-brand"><div class="logo" data-logo></div><span class="station-label"><i></i> TERMINAL ONLINE</span></div>
+      <div class="top-title"><span class="eyebrow">CARDÁPIO / UNIDADE 04</span><h2>Escolha seu pedido.</h2></div>
+      <button class="cart-btn" data-a="go" data-v="cart" aria-label="Abrir carrinho, 0 itens">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+        <span>Pedido</span><b id="badge" aria-live="polite">0</b>
+      </button>
+    </header>
+    <nav id="cats" class="cats" aria-label="Categorias do cardápio"></nav>
+    <div id="products" class="scroll" aria-live="polite"></div>
+    <footer id="menu-bar" class="bar hide"></footer>
+  </section>
+
+  <section id="custom" class="screen">
+    <header class="top">
+      <button class="back" data-a="go" data-v="menu"><span aria-hidden="true">‹</span> Voltar</button>
+      <div class="top-title"><span class="eyebrow">CONFIGURAÇÃO MANUAL</span><h2>Sua pizza</h2></div>
+      <button class="cart-btn compact-cart" data-a="go" data-v="cart" aria-label="Abrir pedido">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><b data-cart-count aria-live="polite">0</b>
+      </button>
+    </header>
+    <div class="preview"><div id="preview-pizza" aria-label="Prévia da pizza"></div><div class="preview-caption"><b id="preview-size">Pizza média</b><span><i></i> RENDER AO VIVO</span></div></div>
+    <div class="scroll" id="custom-scroll"><div id="opts"></div></div>
+    <footer class="bar"><div class="total"><small>Total da pizza</small><b id="custom-total">R$ 0,00</b></div><button id="btn-review" class="btn btn-primary" data-a="review">REVISAR PIZZA</button></footer>
+  </section>
+
+  <section id="cart" class="screen">
+    <header class="top">
+      <button class="back" data-a="go" data-v="menu"><span aria-hidden="true">‹</span> Cardápio</button>
+      <div class="top-title"><span class="eyebrow">REGISTRO DE PEDIDO</span><h2>Seu pedido</h2></div><span class="step-tag">01 / 03</span>
+    </header>
+    <div id="cart-list" class="scroll"></div><footer id="cart-bar" class="bar"></footer>
+  </section>
+
+  <section id="checkout" class="screen">
+    <header class="top">
+      <button class="back" data-a="go" data-v="cart"><span aria-hidden="true">‹</span> Pedido</button>
+      <div class="top-title"><span class="eyebrow">ETAPA 03 / 03</span><h2>Pagamento</h2></div>
+      <button class="cart-btn compact-cart" data-a="go" data-v="cart" aria-label="Voltar ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><b data-cart-count aria-live="polite">0</b></button>
+    </header>
+    <div class="scroll"><h3>1. Confira seu pedido</h3><div id="summary" class="box"></div><h3>2. Escolha como pagar</h3><div id="pay-tabs" class="pay-tabs"></div><div id="pay-panel" class="box pay-panel"></div></div>
+    <footer class="bar"><div class="total"><small>Total</small><b id="co-total"></b></div><button id="btn-confirm" class="btn btn-primary" data-a="confirm">CONFIRMAR PEDIDO</button></footer>
+  </section>
+
+  <section id="success" class="screen">
+    <div class="ok-wrap"><svg class="check" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><path d="M28 52 L44 68 L73 34"/></svg><p class="eyebrow">PEDIDO RECEBIDO</p><h1>Obrigado pela preferência.</h1><p>Seu pedido já está sendo preparado.</p><div class="ticket"><span>Pedido</span><b id="ok-num"></b><span>Total</span><b id="ok-total"></b><span>Pagamento</span><b id="ok-pay"></b></div><p class="muted">Aguarde seu número ser chamado no balcão.</p><button class="btn btn-primary" data-a="newOrder">INICIAR NOVO PEDIDO</button></div>
+  </section>
+
+  <button id="camera-open" class="camera-open" type="button" aria-expanded="false">CAMERA SYSTEM <span>+</span></button>
+  <aside id="camera-panel" class="camera-panel" aria-label="Sistema de câmeras" aria-hidden="true">
+    <div class="camera-head"><div><span class="eyebrow">UNIDADE 04 / SEGURANÇA</span><h2>CAMERA SYSTEM</h2></div><button id="camera-close" type="button" aria-label="Fechar câmeras">×</button></div>
+    <div class="camera-tabs" role="tablist" aria-label="Selecionar câmera">
+      <button class="camera-tab selected" type="button" data-camera="0" role="tab" aria-selected="true">CAM 01</button>
+      <button class="camera-tab" type="button" data-camera="1" role="tab" aria-selected="false">CAM 02</button>
+      <button class="camera-tab" type="button" data-camera="2" role="tab" aria-selected="false">CAM 03</button>
+      <button class="camera-tab" type="button" data-camera="3" role="tab" aria-selected="false">CAM 04</button>
+    </div>
+    <div class="camera-feed feed-0" id="camera-feed" role="img" aria-label="Câmera de segurança: salão vazio">
+      <span class="feed-label" id="feed-label">CAM 01 — SALÃO</span><span class="feed-time" id="feed-time">REC ● 00:14:08</span><span class="feed-grid"></span><span class="room-light"></span><span class="room-table table-one"></span><span class="room-table table-two"></span><span class="room-door"></span><span class="far-shape" aria-hidden="true"></span><span class="feed-status" id="feed-status">SIGNAL: STABLE</span>
+    </div>
+    <p class="camera-foot" id="camera-foot">CONEXÃO ESTABELECIDA <span>●</span></p>
+  </aside>
+
+  <div id="anomaly-message" class="anomaly-message" aria-live="polite"></div>
+  <div id="modal" class="modal"><div class="sheet" id="sheet"></div></div>
+  <div id="toast" class="toast"></div>
+</main>
+<script src="horror.js"></script>
+</body>
+</html>
